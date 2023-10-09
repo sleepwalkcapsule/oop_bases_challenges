@@ -16,12 +16,9 @@ class User:
         self.last_name = last_name
         self.age = age
     
-    def should_be_banned(self):
-        if self.last_name in SURNAMES_TO_BAN:
-            return True
-        else:
-            return False
-        
+    def should_be_banned(self) -> bool:
+        return self.last_name in SURNAMES_TO_BAN
+
 if __name__ == '__main__':
     user_1 = User(first_name='Jay', last_name='Vaughn', age=22)
     user_2 = User(first_name='Bob', last_name='Wilhelm', age=30)
